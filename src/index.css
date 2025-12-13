@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@plugin "flyonui";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import "flowbite/src/themes/default";
+@plugin "flowbite/plugin";
+@source "../node_modules/flowbite";
+
+#root {
+  min-height: 100%;
+  background-color: #F3F4F6;
+}
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+}
