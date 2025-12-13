@@ -1,29 +1,88 @@
-import React from 'react'
-import { useSelector } from 'react-redux';
+import React from "react";
+import { useSelector } from "react-redux";
+import { AlertTriangle } from "lucide-react";
+import StageBadge from "../components/StageBadge.jsx";
+import { Th } from "../components/Th.jsx";
+import Td from "../components/Td.jsx";
+import { Link } from "react-router-dom";
 
 const Opportunity = () => {
-  const list = useSelector(state => state.opportunity.opportunities);
-  console.log(list);
+  const opportunities = useSelector((state) => state.opportunity.opportunities);
 
   return (
-    <div>
-      <h1 className=''>List of opportunities</h1>
-      <div className='card p-2'>
-        {list.map((item) => (
-          <div key={item.id} className='card-item'>
-            <h2>Entreprise : {item.entreprise}</h2>
-            <p>Contact: {item.contact}</p>
-            <p>Email: {item.email}</p>
-            <p>Téléphone: {item.telephone}</p>
-            <p>Montant: {item.montant}</p>
-            <p>Probabilité: {item.probabilite}</p>
-            <p>Étape: {item.etape}</p>
-            <p>Date de Clôture: {item.dateCloture}</p>
-            <p>Source: {item.source}</p>
-          </div>))}
+    <div className="p-6 min-h-screen">
+      <h1 className="text-4xl font-extrabold text- mb-8 border-b border-gray-800 pb-3">
+        Liste des Opportunités
+      </h1>
+
+      <div className="rounded-xl shadow-xl overflow-hidden">
+        <div className="overflow-x-auto">
+          <table className="min-w-full divide-y divide-gray-800 ">
+            <thead className="text-center">
+              <tr className="text-center">
+                <Th>Entreprise</Th>
+                <Th>Contact</Th>
+                <Th>Montant</Th>
+                <Th>Probabilité</Th>
+                <Th>Étape</Th>
+                <Th>Clôture</Th>
+                <Th>Source</Th>
+                <Th className="text-center">Risque</Th>
+                <Th>Action</Th>
+              </tr>
+            </thead>
+
+            <tbody className="divide-y ">
+              {opportunities.map((opp) => {
+                const isRisk =
+                  new Date(opp.closeDate) < new Date() && opp.stage !== "Gagné";
+
+                return (
+                  <tr key={opp.id} className="hover:bg-gray-300 transition">
+                    <Td strong>{opp.entreprise}</Td>
+                    <Td>
+                      <div className="text-sm">{opp.contact}</div>
+                      <div className="text-xs ">{opp.email}</div>
+                    </Td>
+                    <Td>{opp.amount} DH</Td>
+                    <Td>{opp.probability}%</Td>
+                    <Td>
+                      <StageBadge stage={opp.stage} />
+                    </Td>
+                    <Td>{opp.closeDate}</Td>
+                    <Td>{opp.source}</Td>
+                    <Td className="">
+                      {isRisk && (
+                        <AlertTriangle
+                          className=" text-red-500 "
+                          title="Opportunité à risque"
+                        />
+                      )}
+                    </Td>
+                    <Td>
+                      <Link
+                        to={`/opportunities/${opp.id}`}
+                        className="text-indigo-600 hover:text-indigo-900 font-semibold"
+                      >
+                        Voir details
+                      </Link>
+                    </Td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+
+        {/* Empty state */}
+        {opportunities.length === 0 && (
+          <div className="p-6 text-center text-gray-400">
+            Aucune opportunité trouvée
+          </div>
+        )}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Opportunity
+export default Opportunity;

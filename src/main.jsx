@@ -12,6 +12,7 @@ import Opportunity from './pages/Opportunity.jsx'
 import Dashboard from './pages/Dashboard.jsx'
 import AddOpportunity from './pages/AddOpportunity.jsx'
 import Pipeline from './pages/Pipeline.jsx'
+import DetailOpportunity from './pages/DetailOpportunity.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <Provider store={store} >
@@ -20,9 +21,9 @@ createRoot(document.getElementById('root')).render(
       <Routes>
         <Route path="/" element={<Landing />} />
         <Route path="/pipeline" element={<Pipeline />} />
-        <Route path="/opportunites" element={<Opportunity />} />
-        <Route path="/opportunites/:id" element={<App />} />
-        <Route path="/opportunites/ajouter" element={<AddOpportunity />} />
+        <Route path="/opportunities" element={<Opportunity />} />
+        <Route path="/opportunities/:id" element={<DetailOpportunity />} />
+        <Route path="/opportunities/ajouter" element={<AddOpportunity />} />
         <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
