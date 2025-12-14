@@ -6,7 +6,7 @@ const PipelineColumn = ({ stage, opportunities }) => {
   const totalAmount = opportunities.reduce(
     (sum, opp) => sum + Number(opp.amount || 0),
     0
-  );
+);
 
   return (
     <div className="w-70 mx-auto">

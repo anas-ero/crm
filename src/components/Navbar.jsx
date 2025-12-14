@@ -1,20 +1,27 @@
 import React from 'react'
 import AddIcon from '@mui/icons-material/Add';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+import { Plus } from 'lucide-react';
+
 
 const Navbar = () => {
+
+    const baseClasses = "px-4 py-2 rounded-md text-sm font-medium transition";
+    const activeClasses = "bg-gray-800 text-white";
+    const inactiveClasses = "text-gray-600 hover:bg-gray-200";
+
     return (
         <nav className='flex justify-between items-center p-3 bg-white text-gray-600 shadow-md'>
             <div className='flex gap-4 items-center'>
-                <h1>CRM</h1>
-                <Link to="/pipeline"> Pipeline</Link>
-                <Link to="/opportunities"> Opportunités</Link>
-                <Link to="/dashboard"> Dashboard</Link>
+                <Link to="/">CRM</Link>
+                <NavLink to="/pipeline" className={({isActive}) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`}> Pipeline</NavLink>
+                <NavLink to="/opportunities" className={({isActive}) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`}> Opportunités</NavLink>
+                <NavLink to="/dashboard" className={({isActive}) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`}> Dashboard</NavLink>
             </div>
             <div className='flex items-center'>
-                <button type="button" className="flex items-center transition text-white bg-gradient-to-br from-purple-600 to-blue-500  focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-base text-sm px-3 py-2.5 text-center leading-5">
+                <button type="button" className="flex items-center transition text-white bg-gray-600 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:focus:ring-gray-800 font-medium rounded-base text-sm px-3 py-2.5 text-center leading-5">
                     <Link to="/opportunities/ajouter" className='flex items-center'>
-                         Ajouter Opportunité
+                        <Plus size={20} />Ajouter Opportunité
                     </Link>
                 </button>
             </div>

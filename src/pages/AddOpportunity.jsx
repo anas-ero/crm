@@ -39,6 +39,7 @@ const AddOpportunity = () => {
     );
 
     alert("Opportunity added!");
+    console.log(form)
     navigate("/opportunities");
   };
 

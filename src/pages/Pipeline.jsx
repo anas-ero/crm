@@ -9,7 +9,7 @@ const Pipeline = () => {
   return (
     <div>
       <div className="p-6 overflow-x-auto min-h-screen">
-        <h1 className="text-3xl font-bold mb-6 text-black">
+        <h1 className="text-3xl border-b border-gray-800 pb-3 font-bold mb-6 text-black">
           Pipeline Commercial
         </h1>
 

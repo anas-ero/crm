@@ -22,7 +22,7 @@ const OpportunityCard = ({ opp }) => {
         shadow-lg hover:shadow-xl transition
       `}
     >
-      {/* Header */}
+
       <div className="flex justify-between items-start mb-3">
         <h3 className="font-semibold text-lg">
           {opp.entreprise}
@@ -35,20 +35,18 @@ const OpportunityCard = ({ opp }) => {
         )}
       </div>
 
-      {/* Amounts */}
       <div className="text-sm space-y-1">
         <div className="flex justify-between">
           <span>Montant :</span>
-          <span>{opp.amount.toLocaleString()} DH</span>
+          <span>{opp.amount} DH</span>
         </div>
 
         <div className="flex justify-between font-semibold">
           <span>Pondéré :</span>
-          <span>{weightedAmount.toLocaleString()} DH</span>
+          <span>{weightedAmount} DH</span>
         </div>
       </div>
 
-      {/* Footer */}
       <div className="mt-4 flex items-center justify-between">
         <div className="flex items-center gap-1 text-xs">
           <Calendar size={14} />
