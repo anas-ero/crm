@@ -49,12 +49,12 @@ const AddOpportunity = () => {
     <div className="p-6 max-w-2xl mx-auto bg-white rounded-xl shadow-2xl my-8">
       <button
         onClick={() => navigate("/pipeline")}
-        className="text-indigo-600 hover:text-indigo-800 flex items-center mb-4 font-medium"
+        className="text-gray-600 cursor-pointer hover:text-gray-800 flex items-center mb-4 font-medium"
       >
         <ChevronRight className="h-4 w-4 transform rotate-180 mr-1" /> Annuler
         et Retour au Pipeline
       </button>
-      <h2 className="text-3xl font-bold text-indigo-700 mb-6 border-b pb-2">
+      <h2 className="text-3xl font-bold text-gray-600  mb-6 border-b pb-2">
         Créer une Nouvelle Opportunité
       </h2>
 
@@ -125,7 +125,7 @@ const AddOpportunity = () => {
           </div>
         </div>
 
-        <h3 className="text-xl font-semibold text-gray-700 my-6 border-t pt-4">
+        <h3 className="text-xl font-semibold text-gray-600 my-6 border-t pt-4">
           Détails du Contact
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -146,7 +146,7 @@ const AddOpportunity = () => {
 
         <button
           type="submit"
-          className="mt-8 w-full bg-indigo-600 text-white p-3 rounded-lg font-bold text-lg hover:bg-indigo-700 transition-colors shadow-xl"
+          className="mt-8 w-full text-white bg-gray-700 p-3 rounded-lg font-bold text-lg hover:bg-gray-900 cursor-pointer transition-colors shadow-xl"
         >
           Créer l'Opportunité
         </button>

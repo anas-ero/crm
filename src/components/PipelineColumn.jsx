@@ -1,4 +1,3 @@
-// PipelineColumn.jsx
 import React from "react";
 import OpportunityCard from "../components/OpportunityCard.jsx";
 
@@ -10,7 +9,6 @@ const PipelineColumn = ({ stage, opportunities }) => {
 
   return (
     <div className="w-70 mx-auto">
-      {/* Header */}
       <div
         className={`rounded-xl p-4 mb-4 border shadow-md ${stage.color} bg-gray-100`}
       >
@@ -20,11 +18,11 @@ const PipelineColumn = ({ stage, opportunities }) => {
         </p>
       </div>
 
-      {/* Cards */}
       <div className="space-y-3">
         {opportunities.map((opp) => (
           <OpportunityCard key={opp.id} opp={opp} />
         ))}
+        
       </div>
     </div>
   );
