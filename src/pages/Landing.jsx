@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { LayoutDashboard, KanbanSquare, BarChart3 } from "lucide-react";
-import FeatureCard from "./FeatureCard.jsx";
-import TeamCard from "./TeamCard.jsx";
+import FeatureCard from "../components/FeatureCard.jsx";
+import TeamCard from "../components/TeamCard.jsx";
 
 const LandingPage = () => {
   return (
@@ -29,7 +29,7 @@ const LandingPage = () => {
             Équipe du Projet
           </h2>
 
-          <div className="flex flex-col sm:flex-row justify-center gap-8">
+          <div className="flex flex-col items-center sm:flex-row justify-center gap-8">
             <TeamCard name="Anas" role={"Logic and calculations"} />
             <TeamCard name="Diaa" role={"Routing and Styles"} />
           </div>
