@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Opportunity = () => {
   const opportunities = useSelector((state) => state.opportunity.opportunities);
-
+  console.log(opportunities);
   return (
     <div className="p-6 min-h-screen">
       <h1 className="text-4xl font-extrabold text- mb-8 border-b border-gray-800 pb-3">

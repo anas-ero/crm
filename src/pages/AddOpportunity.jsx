@@ -8,22 +8,19 @@ import {
 } from "../redux/OpportunitySlice.jsx";
 import { ChevronRight } from "lucide-react";
 
-
 const AddOpportunity = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const [form, setForm] = useState({
-    
-  });
+  const [form, setForm] = useState({});
 
   const etapes = [
-    { id: 1, name: 'Prospection' },
-    { id: 2, name: 'Qualification' },
-    { id: 3, name: 'Proposition' },
-    { id: 4, name: 'Négociation' },
-    { id: 5, name: 'Gagné' },
-    { id: 6, name: 'Perdu' },
-]
+    { id: 1, name: "Prospection" },
+    { id: 2, name: "Qualification" },
+    { id: 3, name: "Proposition" },
+    { id: 4, name: "Négociation" },
+    { id: 5, name: "Gagné" },
+    { id: 6, name: "Perdu" },
+  ];
 
   const handleChange = (e) => {
     setForm({
@@ -42,8 +39,10 @@ const AddOpportunity = () => {
     );
 
     alert("Opportunity added!");
-    console.log(form);
+    navigate("/opportunities");
   };
+
+  
 
   return (
     <div className="p-6 max-w-2xl mx-auto bg-white rounded-xl shadow-2xl my-8">
@@ -110,10 +109,17 @@ const AddOpportunity = () => {
               value={form.stage}
               onChange={handleChange}
             >
-                <option value="">Sélectionner</option>
-                {etapes.map((etape) => (
-                    <option key={etape.id} name="etape" value={etape.name} onChange={handleChange}>{etape.name}</option>
-                ))}
+              <option value="">Sélectionner</option>
+              {etapes.map((etape) => (
+                <option
+                  key={etape.id}
+                  name="etape"
+                  value={etape.name}
+                  onChange={handleChange}
+                >
+                  {etape.name}
+                </option>
+              ))}
             </select>
           </div>
         </div>
@@ -127,7 +133,7 @@ const AddOpportunity = () => {
             onChange={handleChange}
             name="contact"
           />
-          <Field label="Source" onChange={handleChange} name="source" />
+          <Field label="Source" onChange={handleChange} name="source" type="text" />
           <Field
             label="Email"
             onChange={handleChange}
