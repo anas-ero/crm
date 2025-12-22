@@ -25,66 +25,64 @@ const Opportunity = () => {
       </button>
       <div className="rounded-xl shadow-xl overflow-hidden">
         <div className="overflow-x-auto">
-          {isMobile ? (
-            alert("change to desktop")
-          ) : (
-            <table className="min-w-full divide-y divide-gray-800 ">
-              <thead className="text-center">
-                <tr className="text-center">
-                  <Th>Entreprise</Th>
-                  <Th>Contact</Th>
-                  <Th>Montant</Th>
-                  <Th>Probabilité</Th>
-                  <Th>Étape</Th>
-                  <Th>Clôture</Th>
-                  <Th>Source</Th>
-                  <Th className="text-center">Risque</Th>
-                  <Th>Action</Th>
-                </tr>
-              </thead>
 
-              <tbody className="divide-y ">
-                {opportunities.map((opp) => {
-                  const isRisk =
-                    new Date(opp.closeDate) < new Date() &&
-                    opp.stage !== "Gagné";
+          <table className="min-w-full divide-y divide-gray-800 ">
+            <thead className="text-center">
+              <tr className="text-center">
+                <Th>Entreprise</Th>
+                <Th>Contact</Th>
+                <Th>Montant</Th>
+                <Th>Probabilité</Th>
+                <Th>Étape</Th>
+                <Th>Clôture</Th>
+                <Th>Source</Th>
+                <Th className="text-center">Risque</Th>
+                <Th>Action</Th>
+              </tr>
+            </thead>
 
-                  return (
-                    <tr key={opp.id} className="hover:bg-gray-300 transition">
-                      <Td strong>{opp.entreprise}</Td>
-                      <Td>
-                        <div className="text-sm">{opp.contact}</div>
-                        <div className="text-xs ">{opp.email}</div>
-                      </Td>
-                      <Td>{opp.amount} DH</Td>
-                      <Td>{opp.probability}%</Td>
-                      <Td>
-                        <StageBadge stage={opp.stage} />
-                      </Td>
-                      <Td>{opp.closeDate}</Td>
-                      <Td>{opp.source}</Td>
-                      <Td className="">
-                        {isRisk && (
-                          <AlertTriangle
-                            className=" text-red-500 "
-                            title="Opportunité à risque"
-                          />
-                        )}
-                      </Td>
-                      <Td>
-                        <Link
-                          to={`/opportunities/${opp.id}`}
-                          className="text-indigo-600 hover:text-indigo-900 font-semibold"
-                        >
-                          Voir details
-                        </Link>
-                      </Td>
-                    </tr>
-                  );
-                })}
-              </tbody>
-            </table>
-          )}
+            <tbody className="divide-y ">
+              {opportunities.map((opp) => {
+                const isRisk =
+                  new Date(opp.closeDate) < new Date() &&
+                  opp.stage !== "Gagné";
+
+                return (
+                  <tr key={opp.id} className="hover:bg-gray-300 transition">
+                    <Td strong>{opp.entreprise}</Td>
+                    <Td>
+                      <div className="text-sm">{opp.contact}</div>
+                      <div className="text-xs ">{opp.email}</div>
+                    </Td>
+                    <Td>{opp.amount} DH</Td>
+                    <Td>{opp.probability}%</Td>
+                    <Td>
+                      <StageBadge stage={opp.stage} />
+                    </Td>
+                    <Td>{opp.closeDate}</Td>
+                    <Td>{opp.source}</Td>
+                    <Td className="">
+                      {isRisk && (
+                        <AlertTriangle
+                          className=" text-red-500 "
+                          title="Opportunité à risque"
+                        />
+                      )}
+                    </Td>
+                    <Td>
+                      <Link
+                        to={`/opportunities/${opp.id}`}
+                        className="text-indigo-600 hover:text-indigo-900 font-semibold"
+                      >
+                        Voir details
+                      </Link>
+                    </Td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+
         </div>
 
         {/* Empty state */}

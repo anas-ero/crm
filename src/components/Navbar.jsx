@@ -13,17 +13,10 @@ const Navbar = () => {
     return (
         <nav className='bg-white text-gray-600 shadow-md'>
             <div className='flex justify-between items-center p-3'>
-<<<<<<< HEAD
                 <div className='flex gap-4 items-center '>
                     <Link to="/">
                     <img width={"100"} height={"100"} src={imgLogo} alt="" />
                     </Link>
-=======
-                <div>
-                    <Link to="/">CRM</Link>
-                </div>
-                <div className='flex gap-4 items-center '>
->>>>>>> b829491aed5f01f827488f2cf1e2bf025536401f
                     <NavLink to="/pipeline" className={({isActive}) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses} hidden sm:block`}> Pipeline</NavLink>
                     <NavLink to="/opportunities" className={({isActive}) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses} hidden sm:block`}> Opportunités</NavLink>
                     <NavLink to="/dashboard" className={({isActive}) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses} hidden sm:block`}> Dashboard</NavLink>
