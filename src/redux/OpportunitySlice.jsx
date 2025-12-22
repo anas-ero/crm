@@ -71,7 +71,7 @@ const opportunitySlice = createSlice({
                 source: "test",
                 stage: "Négociation"
             },
-            
+
         ]
     },
     reducers: {

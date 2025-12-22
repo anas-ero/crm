@@ -9,12 +9,14 @@ const Navbar = () => {
     const activeClasses = "bg-gray-700 text-white";
     const inactiveClasses = "text-gray-700 hover:bg-gray-200";
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+    const imgLogo = '../public/logo.png';
     return (
         <nav className='bg-white text-gray-600 shadow-md'>
             <div className='flex justify-between items-center p-3'>
                 <div className='flex gap-4 items-center '>
-                    <Link to="/">CRM</Link>
+                    <Link to="/">
+                    <img width={"100"} height={"100"} src={imgLogo} alt="" />
+                    </Link>
                     <NavLink to="/pipeline" className={({isActive}) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses} hidden sm:block`}> Pipeline</NavLink>
                     <NavLink to="/opportunities" className={({isActive}) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses} hidden sm:block`}> Opportunités</NavLink>
                     <NavLink to="/dashboard" className={({isActive}) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses} hidden sm:block`}> Dashboard</NavLink>
