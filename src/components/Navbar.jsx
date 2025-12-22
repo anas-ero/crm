@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 import { Link, NavLink } from 'react-router-dom';
 import { Plus, Menu, X } from 'lucide-react';
-
+import "../index.css";
 
 const Navbar = () => {
 
@@ -23,7 +23,7 @@ const Navbar = () => {
                 </div>
 
                 <div className='flex items-center gap-2'>
-                    <button type="button" className="flex items-center transition text-white bg-gray-700 hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:focus:ring-gray-800 font-medium rounded-base text-sm px-3 py-2.5 text-center leading-5">
+                    <button type="button" className="flex items-center transition text-white bg-primary-btn hover:bg-gray-600 focus:ring-4 focus:outline-none focus:ring-gray-300 dark:focus:ring-gray-800 font-medium rounded-base text-sm px-3 py-2.5 text-center leading-5">
                         <Link to="/opportunities/ajouter" className='flex items-center'>
                             <Plus size={20} />Ajouter Opportunité
                         </Link>

@@ -7,6 +7,7 @@ import Td from "../components/Td.jsx";
 import { Link } from "react-router-dom";
 import { ArrowDownToLine } from "lucide-react";
 import { exportToCsv } from "../func/exportToCsv.js";
+import "../index.css";
 
 const Opportunity = () => {
   const opportunities = useSelector((state) => state.opportunity.opportunities);
@@ -72,7 +73,7 @@ const Opportunity = () => {
                     <Td>
                       <Link
                         to={`/opportunities/${opp.id}`}
-                        className="text-indigo-600 hover:text-indigo-900 font-semibold"
+                        className="text-primary-btn hover:text-indigo-900 font-semibold"
                       >
                         Voir details
                       </Link>
