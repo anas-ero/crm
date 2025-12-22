@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-;
+
 const opportunitySlice = createSlice({
     name: "opportunities",
     initialState: {

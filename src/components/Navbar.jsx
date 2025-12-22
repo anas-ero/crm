@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom';
 import { Plus, Menu, X } from 'lucide-react';
 import "../index.css";
@@ -15,11 +15,11 @@ const Navbar = () => {
             <div className='flex justify-between items-center p-3'>
                 <div className='flex gap-4 items-center '>
                     <Link to="/">
-                    <img width={"100"} height={"100"} src={imgLogo} alt="" />
+                        <img width={"100"} height={"100"} src={imgLogo} alt="" />
                     </Link>
-                    <NavLink to="/pipeline" className={({isActive}) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses} hidden sm:block`}> Pipeline</NavLink>
-                    <NavLink to="/opportunities" className={({isActive}) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses} hidden sm:block`}> Opportunités</NavLink>
-                    <NavLink to="/dashboard" className={({isActive}) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses} hidden sm:block`}> Dashboard</NavLink>
+                    <NavLink to="/pipeline" className={({ isActive }) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses} hidden sm:block`}> Pipeline</NavLink>
+                    <NavLink to="/opportunities" className={({ isActive }) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses} hidden sm:block`}> Opportunités</NavLink>
+                    <NavLink to="/dashboard" className={({ isActive }) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses} hidden sm:block`}> Dashboard</NavLink>
                 </div>
 
                 <div className='flex items-center gap-2'>
@@ -28,7 +28,7 @@ const Navbar = () => {
                             <Plus size={20} />Ajouter Opportunité
                         </Link>
                     </button>
-                    <button 
+                    <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
                         className="sm:hidden p-2 rounded-md hover:bg-gray-200 transition"
                     >
@@ -36,26 +36,26 @@ const Navbar = () => {
                     </button>
                 </div>
             </div>
-            
+
             {isMenuOpen && (
                 <div className='sm:hidden border-t border-gray-200 p-3 flex flex-col gap-2'>
-                    <NavLink 
-                        to="/pipeline" 
-                        className={({isActive}) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`}
+                    <NavLink
+                        to="/pipeline"
+                        className={({ isActive }) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`}
                         onClick={() => setIsMenuOpen(false)}
                     >
                         Pipeline
                     </NavLink>
-                    <NavLink 
-                        to="/opportunities" 
-                        className={({isActive}) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`}
+                    <NavLink
+                        to="/opportunities"
+                        className={({ isActive }) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`}
                         onClick={() => setIsMenuOpen(false)}
                     >
                         Opportunités
                     </NavLink>
-                    <NavLink 
-                        to="/dashboard" 
-                        className={({isActive}) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`}
+                    <NavLink
+                        to="/dashboard"
+                        className={({ isActive }) => `${baseClasses} ${isActive ? activeClasses : inactiveClasses}`}
                         onClick={() => setIsMenuOpen(false)}
                     >
                         Dashboard
