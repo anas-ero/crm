@@ -17,3 +17,4 @@ const StageBadge = ({ stage }) => (
   </span>
 );
 export default StageBadge;
+

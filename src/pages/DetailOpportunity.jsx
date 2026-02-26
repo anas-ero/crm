@@ -73,7 +73,7 @@ const DetailOpportunity = () => {
   return (
     <div className="min-h-screen p-8 w-4/5 mx-auto text-white">
       <button
-        onClick={() => navigate("/pipeline")}
+        onClick={() => navigate("/opportunities")}
         className="flex items-center gap-2 text-black cursor-pointer mb-6"
       >
         <ChevronLeft size={18} />
@@ -136,9 +136,9 @@ const DetailOpportunity = () => {
 
             <Field
               icon={User}
-              label="Commercial Assigné"
-              value={form.commercial}
-              onChange={(v) => updateField("commercial", v)}
+              label="Source"
+              value={form.source}
+              onChange={(v) => updateField("source", v)}
             />
 
             <Field
